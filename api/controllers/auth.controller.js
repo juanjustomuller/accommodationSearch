@@ -43,7 +43,7 @@ export const register = async (req, res) => {
             })
 
             if(!user){
-                return res.send(401).json({message: "Invalid Credentials!"})
+                return res.status(401).json({message: "Invalid Credentials!"})
             }    //si no existe retorno usuario no encontrado
             
             //CHEQUEAR SI LA PASSWORD ES CORRECTA...
@@ -51,7 +51,7 @@ export const register = async (req, res) => {
             const isPasswordValid =  await bcrypt.compare(password, user.password)
 
             if(!isPasswordValid){
-                return res.send(401).json({message: "Invalid Credentials!"})  
+                return res.status(401).json({message: "Invalid Credentials!"})  
             }  
 
             
