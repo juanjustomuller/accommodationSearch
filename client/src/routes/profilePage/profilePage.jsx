@@ -79,7 +79,7 @@ const ProfilePage = () => {
         <Suspense fallback={<p>Loading...</p>}>
             <Await
               resolve={data.chatResponse}
-              errorElement={<p>Error loading chats!</p>}
+              errorElement={<p>{/*Error loading chats*/}Work in progess!</p>}
             >
               {(chatResponse) => <Chat chat={chatResponse.data}/>}
             </Await>
